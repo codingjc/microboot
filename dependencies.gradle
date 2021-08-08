@@ -1,6 +1,15 @@
-ext.versions = [    //定义所有要使用过的版本号
-        springboot: '2.4.3'
+ext.versions = [    // 定义所有要使用过的版本号
+        springboot:                 '2.4.3',
+        junit:                      '5.7.1', // junit版本
+        junitPlatformLauncher:      '1.7.1'
 ]
-ext.libraries = [    //定义所有的依赖库
-        'spring-boot-gradle-plugin': "org.springframework.boot:spring-boot-gradle-plugin:${versions.springboot}"
+ext.libraries = [    // 定义所有的依赖库
+        // springboot项目所需要的核心依赖
+        'spring-boot-gradle-plugin': "org.springframework.boot:spring-boot-gradle-plugin:${versions.springboot}",
+        // 项目用例测试有关的依赖
+        'junit-jupiter-api': "org.junit.jupiter:junit-jupiter-api:${versions.junit}",
+        'junit-vintage-engine': "org.junit.vintage:junit-vintage-engine:${versions.junit}",
+        'junit-jupiter-engine': "org.junit.jupiter:junit-jupiter-engine:${versions.junit}",
+        'junit-platform-launcher': "org.junit.platform:junit-platform-launcher:${versions.junitPlatformLauncher}",
+        'junit-bom': "org.junit:junit-bom:${versions.junit}"
 ]

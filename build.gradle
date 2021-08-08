@@ -43,7 +43,14 @@ subprojects {  // 子模块
     dependencies {
         // 公共依赖库管理
         compile('org.springframework.boot:spring-boot-devtools')
-
+        testImplementation('org.springframework.boot:spring-boot-starter-test'){ // 此时会默认引入Jnuit4组件
+            exclude group: 'jnit', module: 'junit' // 移除旧版本的测试工具
+        }
+        testImplementation(enforcedPlatform(libraries.'junit-bom')) // 将当前项目强制性绑定为Junit5运行
+        testImplementation(libraries.'junit-jupiter-api')
+        testImplementation(libraries.'junit-vintage-engine')
+        testImplementation(libraries.'junit-jupiter-engine')
+        testImplementation(libraries.'junit-platform-launcher')
     }
 
     sourceSets {    // 源代码目录配置
@@ -98,7 +105,7 @@ project('microboot-web') { // 子模块
     dependencies { // 配置子模块依赖
         compile(project(':microboot-common')) // 引入其他子模块
         compile('org.springframework.boot:spring-boot-starter-web')
-
+        compile('com.alibaba:easyexcel:2.2.6')
     }
 }
 project('microboot-common') { // 子模块
