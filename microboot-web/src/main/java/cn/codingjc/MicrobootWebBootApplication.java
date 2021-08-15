@@ -1,7 +1,6 @@
 package cn.codingjc;
 
 import cn.codingjc.banner.CodingjcBanner;
-import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
@@ -22,7 +21,6 @@ public class MicrobootWebBootApplication {
     public static void main(String[] args) {
         SpringApplication springApplication = new SpringApplication(
                 MicrobootWebBootApplication.class);
-        springApplication.setBannerMode(Banner.Mode.OFF);
         springApplication.setBanner(new CodingjcBanner());
         springApplication.run(args);
     }

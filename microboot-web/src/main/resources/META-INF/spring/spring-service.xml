@@ -6,6 +6,5 @@
 
     <!--  依据spring的配置要求配置Bean对象  -->
     <bean id="messageService" class="cn.codingjc.service.MessageServiceImpl">
-
     </bean>
 </beans>

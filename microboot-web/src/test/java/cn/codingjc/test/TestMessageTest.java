@@ -4,6 +4,7 @@ import cn.codingjc.MicrobootWebBootApplication;
 import cn.codingjc.action.MessageAction;
 import cn.codingjc.config.DemoDataListener;
 import cn.codingjc.entity.DemoData;
+import cn.codingjc.vo.Message;
 import com.alibaba.excel.EasyExcel;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
@@ -15,6 +16,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.web.WebAppConfiguration;
 
+import java.util.Date;
+
 /**
  * @author coding_jc
  * @date 2021/8/8
@@ -23,16 +26,20 @@ import org.springframework.test.context.web.WebAppConfiguration;
 @WebAppConfiguration // 启动WEB运行环境
 @SpringBootTest(classes = MicrobootWebBootApplication.class) // 配置程序启动类
 public class TestMessageTest {
+
     @Autowired
     private MessageAction messageAction;
+
     @BeforeAll
     public static void init(){
         System.out.println("【@beforeAll】TestMessageTest类开始执行初始化操作");
     }
+
     @AfterAll
     public static void after(){
         System.out.println("【@AfterAll】TestMessageTest类执行完毕");
     }
+
     @Test
     public void testEcho(){
         String content = this.messageAction.echo("Test");
@@ -48,6 +55,14 @@ public class TestMessageTest {
         EasyExcel.read(fileName, DemoData.class, demoDataListener).sheet(0).doRead();
         demoDataListener.getList().forEach(row -> System.out.println(row.toString()));
         System.out.println("demoDataListener.getList().size() = " + demoDataListener.getList().size());
+    }
+
+    @Test
+    public void test1(){
+        Message message = new Message();
+        message.setTitle("title");
+        message.setPubdate(new Date());
+        System.out.println(message);
     }
 
 }

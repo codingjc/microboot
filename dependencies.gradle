@@ -1,7 +1,9 @@
 ext.versions = [    // 定义所有要使用过的版本号
-        springboot:                 '2.4.3',
-        junit:                      '5.7.1', // junit版本
-        junitPlatformLauncher:      '1.7.1'
+        springboot                 :'2.4.3',  // springboot版本号
+        junit                      :'5.7.1',  // junit版本
+        junitPlatformLauncher      :'1.7.1',  // junit测试工具运行平台版本
+        lombok                     :'1.18.18' // lombok插件版本号
+
 ]
 ext.libraries = [    // 定义所有的依赖库
         // springboot项目所需要的核心依赖
@@ -11,5 +13,8 @@ ext.libraries = [    // 定义所有的依赖库
         'junit-vintage-engine': "org.junit.vintage:junit-vintage-engine:${versions.junit}",
         'junit-jupiter-engine': "org.junit.jupiter:junit-jupiter-engine:${versions.junit}",
         'junit-platform-launcher': "org.junit.platform:junit-platform-launcher:${versions.junitPlatformLauncher}",
-        'junit-bom': "org.junit:junit-bom:${versions.junit}"
+        'junit-bom': "org.junit:junit-bom:${versions.junit}",
+        // lombok有关依赖
+        'lombok': "org.projectlombok:lombok:${versions.lombok}"
+
 ]

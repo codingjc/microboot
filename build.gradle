@@ -40,17 +40,20 @@ subprojects {  // 子模块
         maven { url ALIYUN_REPOSITORY_URL } // 设置阿里云仓库
         maven { url ALIYUN_JCENTER_URL } // 设置阿里云仓库
     }
-    dependencies {
-        // 公共依赖库管理
-        compile('org.springframework.boot:spring-boot-devtools')
+    dependencies { // 公共依赖库管理
+        compile('org.springframework.boot:spring-boot-devtools') // 允许项目热部署
+        // 以下为测试环境的相关依赖配置
         testImplementation('org.springframework.boot:spring-boot-starter-test'){ // 此时会默认引入Jnuit4组件
-            exclude group: 'jnit', module: 'junit' // 移除旧版本的测试工具
+            exclude group: 'junit', module: 'junit' // 移除旧版本的测试工具
         }
         testImplementation(enforcedPlatform(libraries.'junit-bom')) // 将当前项目强制性绑定为Junit5运行
         testImplementation(libraries.'junit-jupiter-api')
         testImplementation(libraries.'junit-vintage-engine')
         testImplementation(libraries.'junit-jupiter-engine')
         testImplementation(libraries.'junit-platform-launcher')
+        // 以下为lombok的相关依赖配置
+        compileOnly(libraries.'lombok') // 在编译时会生效
+        annotationProcessor(libraries.'lombok') // 在注解的时候就生效
     }
 
     sourceSets {    // 源代码目录配置
