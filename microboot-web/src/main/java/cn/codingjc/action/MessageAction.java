@@ -1,6 +1,8 @@
 package cn.codingjc.action;
 
+import cn.codingjc.common.action.abs.AbstractBaseAction;
 import cn.codingjc.service.IMessageService;
+import cn.codingjc.vo.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,16 +15,16 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/message/*")
-public class MessageAction {
+public class MessageAction extends AbstractBaseAction {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(MessageAction.class);
 
     @Autowired
     private IMessageService messageService;
 
     @RequestMapping("echo")
-    public String echo(String msg){
-        LOGGER.info("Achieve param is {}", msg);
-        return messageService.echo(msg);
+    public Object echo(Message message){
+        message.setTitle("【Echo】" + message.getTitle());
+        message.setContent("【Echo】" + message.getContent());
+        return message;
     }
 }

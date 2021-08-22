@@ -9,6 +9,22 @@ repositories {
     mavenCentral()
 }
 
+jar {
+    enabled = true // 允许当前模块打包成 *.jar
+}
+
+javadocTask {
+    enabled = false // 不启用javadoc任务
+}
+
+javadocJar {
+    enabled = false // 不启用javadoc的"*.jar"文件
+}
+
+bootJar {
+    enabled = false // 不执行Springboot的打包命令
+}
+
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
