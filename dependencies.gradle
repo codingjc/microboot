@@ -1,8 +1,9 @@
 ext.versions = [    // 定义所有要使用过的版本号
-        springboot                 :'2.4.3',  // springboot版本号
-        junit                      :'5.7.1',  // junit版本
-        junitPlatformLauncher      :'1.7.1',  // junit测试工具运行平台版本
-        lombok                     :'1.18.18' // lombok插件版本号
+        springboot                 :'2.4.3',   // springboot版本号
+        junit                      :'5.7.1',   // junit版本
+        junitPlatformLauncher      :'1.7.1',   // junit测试工具运行平台版本
+        lombok                     :'1.18.18', // lombok插件版本号
+        fastjson                   :'1.2.75'         // fasejson
 
 ]
 ext.libraries = [    // 定义所有的依赖库
@@ -15,6 +16,8 @@ ext.libraries = [    // 定义所有的依赖库
         'junit-platform-launcher': "org.junit.platform:junit-platform-launcher:${versions.junitPlatformLauncher}",
         'junit-bom': "org.junit:junit-bom:${versions.junit}",
         // lombok有关依赖
-        'lombok': "org.projectlombok:lombok:${versions.lombok}"
+        'lombok': "org.projectlombok:lombok:${versions.lombok}",
+        // fastjson有关依赖
+        'fastjson': "com.alibaba:fastjson:${versions.fastjson}"
 
 ]
