@@ -108,7 +108,11 @@ project('microboot-web') { // 子模块
     dependencies { // 配置子模块依赖
         compile(project(':microboot-common')) // 引入其他子模块
 //        compile('org.springframework.boot:spring-boot-starter-web')
-        compile(libraries.'fastjson') // 引入fastjson组件
+//        compile(libraries.'fastjson') // 引入fastjson组件
+//        compile(libraries.'jackson-dataformat-xml') // 引入fastjson组件
+//        compile(libraries.'jackson-databind') // 引入fastjson组件
+//        compile(libraries.'jackson-annotations') // 引入fastjson组件
+        compile(libraries.'itextpdf') // 引入pdf相关依赖
     }
 }
 project('microboot-common') { // 子模块

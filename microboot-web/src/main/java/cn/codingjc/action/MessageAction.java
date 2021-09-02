@@ -17,12 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/message/*")
 public class MessageAction extends AbstractBaseAction {
 
-
     @Autowired
     private IMessageService messageService;
 
-    @RequestMapping("echo")
-    public Object echo(Message message){
+    @RequestMapping(value = "echo", produces = {"application/xml","application/json"})
+    public Message echo(Message message){
         message.setTitle("【Echo】" + message.getTitle());
         message.setContent("【Echo】" + message.getContent());
         return message;

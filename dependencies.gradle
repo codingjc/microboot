@@ -3,7 +3,9 @@ ext.versions = [    // 定义所有要使用过的版本号
         junit                      :'5.7.1',   // junit版本
         junitPlatformLauncher      :'1.7.1',   // junit测试工具运行平台版本
         lombok                     :'1.18.18', // lombok插件版本号
-        fastjson                   :'1.2.75'         // fasejson
+        fastjson                   :'1.2.75',  // fasejson
+        jackson                    :'2.12.2',  // 配置jackson,
+        itextpdf                   :'5.5.13.2' //  PDF文件生成的依赖库
 
 ]
 ext.libraries = [    // 定义所有的依赖库
@@ -18,6 +20,10 @@ ext.libraries = [    // 定义所有的依赖库
         // lombok有关依赖
         'lombok': "org.projectlombok:lombok:${versions.lombok}",
         // fastjson有关依赖
-        'fastjson': "com.alibaba:fastjson:${versions.fastjson}"
-
+        'fastjson': "com.alibaba:fastjson:${versions.fastjson}",
+        // 未下的配置为jackson输出转换XML有关依赖
+        'jackson-dataformat-xml': "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:${versions.jackson}",
+        'jackson-databind': "com.fasterxml.jackson.core:jackson-databind:${versions.jackson}",
+        'jackson-annotations': "com.fasterxml.jackson.core:jackson-annotations:${versions.jackson}",
+        'itextpdf': "com.itextpdf:itextpdf:${versions.itextpdf}"
 ]

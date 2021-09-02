@@ -1,10 +1,8 @@
 package cn.codingjc.vo;
 
-import com.alibaba.fastjson.annotation.JSONField;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
-import lombok.experimental.Accessors;
-
+//import javax.xml.bind.annotation.XmlElement;
+//import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 
 /**
@@ -12,10 +10,13 @@ import java.util.Date;
  * @date 2021/8/13
  */
 @Data
+//@XmlRootElement   // 配置XML根元素
 public class Message {
+//    @XmlElement
     private String title;
-//    @JSONField(format = "yyyy年MM月dd日")
-    @JsonFormat(pattern = "yyyy年MM月dd日")
+//    @XmlElement
+//    @JsonFormat(pattern = "yyyy年MM月dd日")
     private Date pubdate;
+//    @XmlElement
     private String content;
 }
