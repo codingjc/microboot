@@ -5,8 +5,10 @@ package cn.codingjc.config;
 //import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
+import org.springframework.http.converter.BufferedImageHttpMessageConverter;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.ArrayList;
@@ -51,4 +53,10 @@ public class WebConfig implements WebMvcConfigurer {
 //        // 5.在转换器列表中添加配置完成的fastjson转换组件
 //        converters.add(fastJsonHttpMessageConverter);
 //    }
+
+    // 添加扩充的转换器
+    @Override
+    public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
+        converters.add(new BufferedImageHttpMessageConverter());
+    }
 }
