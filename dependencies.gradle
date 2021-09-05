@@ -5,8 +5,8 @@ ext.versions = [    // 定义所有要使用过的版本号
         lombok                     :'1.18.18', // lombok插件版本号
         fastjson                   :'1.2.75',  // fasejson
         jackson                    :'2.12.2',  // 配置jackson,
-        itextpdf                   :'5.5.13.2' //  PDF文件生成的依赖库
-
+        itextpdf                   :'5.5.13.2',//  PDF文件生成的依赖库
+        easypoi                    : '4.3.0'
 ]
 ext.libraries = [    // 定义所有的依赖库
         // springboot项目所需要的核心依赖
@@ -25,5 +25,6 @@ ext.libraries = [    // 定义所有的依赖库
         'jackson-dataformat-xml': "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:${versions.jackson}",
         'jackson-databind': "com.fasterxml.jackson.core:jackson-databind:${versions.jackson}",
         'jackson-annotations': "com.fasterxml.jackson.core:jackson-annotations:${versions.jackson}",
-        'itextpdf': "com.itextpdf:itextpdf:${versions.itextpdf}"
+        'itextpdf': "com.itextpdf:itextpdf:${versions.itextpdf}",
+        'easypoi': "cn.afterturn:easypoi-spring-boot-starter:${versions.easypoi}"
 ]

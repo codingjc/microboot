@@ -113,6 +113,7 @@ project('microboot-web') { // 子模块
 //        compile(libraries.'jackson-databind') // 引入fastjson组件
 //        compile(libraries.'jackson-annotations') // 引入fastjson组件
         compile(libraries.'itextpdf') // 引入pdf相关依赖
+        compile(libraries.'easypoi')  // 引入easypoi相关依赖
     }
 }
 project('microboot-common') { // 子模块
