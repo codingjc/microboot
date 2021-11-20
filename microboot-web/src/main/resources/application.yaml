@@ -1,0 +1,18 @@
+source:
+  mysql: jdbc:mysql://127.0.0.1:3306/testDB
+  redis: redis://127.0.0.1:6379/db
+  message: 大华技术,大华股份
+  infos: "{'name':'zhangsan', 'age':'18'}"
+  #message : #在spring中数组和list对等
+    #- 大华技术
+    #- 大华股份
+  #books:
+    #javaBase: java基础
+    #javaApplication: java应用
+    #javaWeb: javaWeb
+    #springBoot: springboot
+
+server:
+  port: 8686 # 服务运行端口
+  servlet:
+    context-path: /codingjc  # 上下文运行路径

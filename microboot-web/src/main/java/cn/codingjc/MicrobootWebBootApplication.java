@@ -3,6 +3,7 @@ package cn.codingjc;
 import cn.codingjc.banner.CodingjcBanner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @ImportResource(locations = {"classpath:META-INF/spring/spring-*.xml"})
 @SpringBootApplication
-public class MicrobootWebBootApplication {
+public class MicrobootWebBootApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         SpringApplication springApplication = new SpringApplication(
